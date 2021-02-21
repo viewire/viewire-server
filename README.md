@@ -1,4 +1,4 @@
-<h1 align= "center"> Viewire Server Software </h1>
+<h1 align= "center"> Viewire Media Server </h1>
 
 ![](images/header.png)
 
