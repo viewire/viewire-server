@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>viewier server</string>
+   <string>Viewire Server</string>
   </property>
   <property name="windowIcon">
    <iconset resource="resources.qrc">
@@ -50,8 +50,11 @@
         <pointsize>11</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color:#ff8a82</string>
+      </property>
       <property name="text">
-       <string>Managing the server</string>
+       <string>Server is Offline.</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
