@@ -39,7 +39,7 @@ void MediaServer::readmsg()
 
     // Notifies the client that the message has been received.
     QByteArray clientData;
-    clientData.append("1");
+    clientData.append("Message received.");
 
-    SOCKET->writeDatagram(clientData, sender_addr, sender_port);
+    SOCKET->writeDatagram(clientData, QHostAddress::LocalHost, sender_port);
 }
