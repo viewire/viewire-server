@@ -14,11 +14,11 @@ CONFIG += c++11 \
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    server.cpp
+    mediaserver.cpp
 
 HEADERS += \
     mainwindow.h \
-    server.h
+    mediaserver.h
 
 FORMS += \
     mainwindow.ui

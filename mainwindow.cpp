@@ -1,11 +1,11 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QColor>
-#include "server.h"
+#include "mediaserver.h"
 
 const QColor DISABLED = QColor::fromRgb(255, 138, 130);
 const QColor ENABLED = QColor::fromRgb(178, 255, 130);
-Server* s;
+MediaServer* s;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,13 +19,12 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
 void MainWindow::on_pushButton_2_clicked()
 {
     this->ui->label->setText("Server is Online.");
     this->ui->label->setStyleSheet("color: " + ENABLED.name());
 
-    s = new Server;
+    s = new MediaServer;
     s->initSocket(7725);
 
     this->ui->pushButton_2->setEnabled(false);
