@@ -12,11 +12,13 @@ CONFIG += c++11 \
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    # httpserver.cpp \
     main.cpp \
     mainwindow.cpp \
     mediaserver.cpp
 
 HEADERS += \
+    # httpserver.h \
     mainwindow.h \
     mediaserver.h
 
@@ -30,3 +32,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     resources.qrc
+
+# win32:CONFIG(release, debug|release): LIBS += -L$$PWD/qhttpserver/qhttpengine-1.0.1-win64/lib/ -lqhttpengine
+# else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/qhttpserver/qhttpengine-1.0.1-win64/lib/ -lqhttpengined
+# else:unix: LIBS += -L$$PWD/qhttpserver/qhttpengine-1.0.1-win64/lib/ -lqhttpengine
+
+# INCLUDEPATH += $$PWD/qhttpserver/qhttpengine-1.0.1-win64/include
+# DEPENDPATH += $$PWD/qhttpserver/qhttpengine-1.0.1-win64/include
