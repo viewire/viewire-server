@@ -17,13 +17,12 @@ void MediaServer::initSocket(int port)
 
     connect(SOCKET, SIGNAL(readyRead()), this, SLOT(readmsg()));
 
-    std::cout << (connected ? "CONNECTED!" : "ERROR: CONNECTION FAILED.") << std::endl;
-
+    std::cout << (connected ? "Server started." : "ERROR: Could not start server.") << std::endl;
 }
 
 void MediaServer::readmsg()
 {
-    // Creates and resizes a buffer to
+    // Creates and resizes the buffer to
     // the size of the incoming datagram.
     QByteArray buffer;
     QHostAddress sender_addr;
@@ -35,11 +34,10 @@ void MediaServer::readmsg()
     SOCKET->readDatagram(buffer.data(), buffer.size(), &sender_addr, &sender_port);
 
     QString data = sender_addr.toString();
-    std::cout << "Message from " << data.toStdString() << ":" << sender_port << ": " << buffer.data() << std::endl;
+    std::cout << "Message from " << data.toStdString() << ":" << sender_port << " -> " << buffer.data() << std::endl;
 
     // Notifies the client that the message has been received.
     QByteArray clientData;
     clientData.append("Message received.");
-
     SOCKET->writeDatagram(clientData, QHostAddress::LocalHost, sender_port);
 }
